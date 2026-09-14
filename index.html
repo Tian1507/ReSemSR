@@ -25,7 +25,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              StreamWSR: Streamable and Lightweight Waveform-Domain Neural Speech Super-Resolution
+              ReSemSR: A Speech Super-Resolution Model with Reconstruction-Aware Semantic Guidance
             </h1>
 
             <div class="is-size-5 publication-authors">
@@ -61,12 +61,11 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p id="abstract">
-              This paper proposes StreamWSR, a Streamable neural Waveform-domain model for speech Super-Resolution (SR).
-              By adopting a fully causal architecture with compact frame-level waveform representation, the proposed StreamWSR supports zero-look-ahead streaming inference while avoiding vocoder-based reconstruction and explicit phase prediction.
-              Specifically, StreamWSR downsamples the input waveform into a compact frame-level representation using strided causal convolutions.
-              Then, a lightweight causal long-short-term modeling backbone is employed to capture both local waveform structures and long-range historical dependencies under causal constraints.
-              Finally, the modeled output is converted back to the waveform domain through a causal transposed-convolutional decoder and combined with the input waveform via a residual connection to generate the final high-resolution speech.
-              Experimental results on 16 kHz speech SR show that StreamWSR achieves competitive or superior speech quality and intelligibility compared with representative waveform- and spectrum-based baselines, while maintaining a zero-look-ahead streaming advantage with only 9M parameters and 2G FLOPs.
+              This paper proposes ReSemSR, a Reconstruction-aware Semantic-guided framework for speech Super-Resolution, targeting the increased ambiguity of recovering missing spectral components under severe bandwidth limitation.
+ReSemSR first performs coarse acoustic reconstruction and then exploits the resulting intermediate acoustic representation together with the low-resolution spectrum to predict the semantic-unit posterior of the target speech through a compact reconstruction-aware semantic prediction module. 
+During training, a frozen HuBERT teacher model and a fixed K-means codebook provide semantic supervision, while HuBERT is completely removed during inference.
+The predicted semantic-unit posterior is then mapped to a continuous semantic representation and incorporated into the acoustic refinement network to guide the reconstruction of missing high-frequency components.
+Experimental results on 16 kHz speech super-resolution demonstrate that ReSemSR achieves competitive spectral and perceptual quality while providing increasingly pronounced intelligibility improvements as the input bandwidth decreases, and requires substantially lower computational complexity than the compared semantic-guided method.
             </p>
           </div>
         </div>
