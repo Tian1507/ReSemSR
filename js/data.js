@@ -7,12 +7,12 @@ const BASE_PATH = "./wavs";
 const METHODS = [
   { key: "Narrowband", label: "Narrowband" },
   { key: "Wideband",  label: "Wideband"  },
-  { key: "UDM+",      label: "Wave-U-Mamba"      },
-  { key: "TRAMBA",  label: "FLowHigh"  },
-  { key: "FLowHigh",  label: "AP-BWE"  },
-  { key: "AP-BWE",    label: "mdctGAN"    },
-  { key: "StreamWSR", label: "SAGA-SR" },
-  { key: "StreamWSR", label: "ReSemSR" },
+  { key: "Wave-U-Mamba",      label: "Wave-U-Mamba"      },
+  { key: "FLowHigh",  label: "FLowHigh"  },
+  { key: "AP-BWE",  label: "AP-BWE"  },
+  { key: "mdctGAN",    label: "mdctGAN"    },
+  { key: "SAGA-SR", label: "SAGA-SR" },
+  { key: "ReSemSR", label: "ReSemSR" },
 ];
 
 // Sections + sample keys (file stem without extension)
